@@ -83,18 +83,24 @@ class Coolhelpfulthingsextension {
                 "text": "false",
                 "arguments": {}
             }, {
-                "opcode": "factorialBlock",
-                "blockType": "reporter",
-                "text": "[num] factorial",
+                "opcode": "dangerous_javascript",
+                "blockType": "command",
+                "text": "eval [danger]",
                 "arguments": {
-                    "num": {
-                        "type": "number",
-                        "defaultValue": 10
+                    "danger": {
+                        "type": "string"
                     }
                 }
             }]
         };
     }
+    dangercode({
+        danger,
+        callback
+        )} {
+            eval(danger);
+            callback();
+        }
     alert_stuffs({
         alert,
         callback
